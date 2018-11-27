@@ -6,18 +6,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
-import com.smartcar.sdk.SmartcarAuth;
-import com.smartcar.sdk.SmartcarCallback;
-import com.smartcar.sdk.SmartcarResponse;
+import com.smartcar.sdk.*;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import okhttp3.*;
 
 public class MainActivity extends AppCompatActivity {
 
