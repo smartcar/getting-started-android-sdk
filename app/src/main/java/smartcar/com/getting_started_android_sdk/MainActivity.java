@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                         Request exchangeRequest = new Request.Builder()
                             // Android emulator runs in a VM, therefore localhost will be the
                             // emulator's own loopback address
-                            .url("http://10.0.2.2:8000/callback?code=" + smartcarResponse.getCode())
+                            .url("http://10.0.2.2:8000/exchange?code=" + smartcarResponse.getCode())
                             .build();
 
                         try {
