@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">getting-started-android-sdk</string>
+    <string name="smartcar_auth_scheme">sc[yourClientId]</string>
+    <string name="smartcar_auth_host">page</string>
+    <!-- TODO: STEP 4: Initialize your application -->
+    <string name="client_id">[yourClientId]</string>
+    <string name="app_server">[yourAppServer]</string>
+</resources>

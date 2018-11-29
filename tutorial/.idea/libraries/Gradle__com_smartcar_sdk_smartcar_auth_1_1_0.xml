@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.smartcar.sdk:smartcar-auth-1.1.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/smartcar-auth-1.1.0.aar/36947d334effa052f61e94c082d7257d/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/smartcar-auth-1.1.0.aar/36947d334effa052f61e94c082d7257d/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.smartcar.sdk/smartcar-auth/1.1.0/180fecbeb389fbb326c8af90d98ebd50f0e96222/smartcar-auth-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
