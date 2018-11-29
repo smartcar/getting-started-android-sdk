@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- TODO: STEP 7: Receive an authorization code -->
+        <!-- TODO: Authorization STEP 3a: Receive an authorization code -->
         <activity android:name=".DisplayInfoActivity"></activity>
     </application>
 

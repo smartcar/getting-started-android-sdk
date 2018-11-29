@@ -26,16 +26,16 @@ public class MainActivity extends AppCompatActivity {
 
         appContext = getApplicationContext();
 
-        // TODO: Step 5: Initialize the Smartcar object
+        // TODO: Authorization Step 1: Initialize the Smartcar object
 
-        // TODO: Step 7: Receive the authorization code
+        // TODO: Authorization Step 3b: Receive the authorization code
 
-        // TODO: Step 8: Obtain an access token
+        // TODO: Request Step 1: Obtain an access token
 
-        // TODO: STEP 9: Get vehicle information
+        // TODO: Request Step 2: Get vehicle information
 
         Button connectButton = (Button) findViewById(R.id.connect_button);
 
-        // TODO: Step 6: Launch the authorization flow
+        // TODO: Authorization Step 2: Launch the authorization flow
     }
 }
