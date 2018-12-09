@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Context appContext;
 
+    // TODO: Authorization Step 1a. Initialize the Smartcar object
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         appContext = getApplicationContext();
 
-        // TODO: Authorization Step 1: Initialize the Smartcar object
+        // TODO: Authorization Step 1b: Initialize the Smartcar object
 
         // TODO: Authorization Step 3b: Receive the authorization code
 
