@@ -39,6 +39,6 @@ public class MainActivity extends AppCompatActivity {
 
         Button connectButton = (Button) findViewById(R.id.connect_button);
 
-        // TODO: Authorization Step 2: Launch the authorization flow
+        // TODO: Authorization Step 2: Launch Connect
     }
 }
