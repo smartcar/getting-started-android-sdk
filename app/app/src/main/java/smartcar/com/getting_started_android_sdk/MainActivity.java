@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         appContext = getApplicationContext();
         CLIENT_ID = getString(R.string.client_id);
         REDIRECT_URI = "sc" + getString(R.string.client_id) + "://exchange";
-        SCOPE = new String[]{"read_vehicle_info"};
+        SCOPE = new String[]{"required:read_vehicle_info"};
 
         smartcarAuth = new SmartcarAuth(
                 CLIENT_ID,
