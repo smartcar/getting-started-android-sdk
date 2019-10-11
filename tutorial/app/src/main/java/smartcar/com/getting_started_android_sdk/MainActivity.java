@@ -3,18 +3,23 @@ package smartcar.com.getting_started_android_sdk;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.widget.Button;
-import android.util.Log;
+import androidx.appcompat.app.AppCompatActivity;
 
-import com.smartcar.sdk.*;
+import android.util.Log;
+import android.widget.Button;
+
+import com.smartcar.sdk.SmartcarAuth;
+import com.smartcar.sdk.SmartcarCallback;
+import com.smartcar.sdk.SmartcarResponse;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 
-import okhttp3.*;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         // TODO: Request Step 2: Get vehicle information
 
-        Button connectButton = (Button) findViewById(R.id.connect_button);
+        Button connectButton = findViewById(R.id.connect_button);
 
         // TODO: Authorization Step 2: Launch Connect
     }

@@ -3,12 +3,13 @@ This is the starter kit for Android SDK.
 This kit contains a simple Android application that displays car information using Smartcar's Android SDK.
 
 ## Instructions
-Before we get started, create an application on Smartcar's Developer Dashboard to get your API keys.
+Before we get started, create an application on [Smartcar's Developer Dashboard](https://dashboard.smartcar.com) to get your API keys.
 
-**Note:** On the dashboard, you will want to set your `redirect_uri` as `'sc' + clientId + '://exchange'`.
+**Note:** On the dashboard, add a redirect uri on the credentials tab with the following format: `sc` + `yourClientId` + `://exchange`. For example: `sc42d24fb4-74e7-4e3b-b82a-913fa9345d1a://exchange`.
 
 Then, we can set these constants in `strings.xml` -
 ```xml
+<string name="smartcar_auth_scheme">sc[yourClientId]</string>
 <string name="client_id">[yourClientId]</string>
 ```
 
@@ -36,7 +37,7 @@ Follow the setup instructions in the back-end README except for the `redirect_ur
 
 Now that the server is ready, you can set up the client (the React application).
 
-Set the server `uri` in `strings.xml`. This should be from your back-end directory and is set to `http://10.0.0.2:8000` by default. We do not set the redirect_uri to the localhost because the Android emulator runs in a VM, therefore localhost will be the emulator's own loopback address.
+Set the server `uri` in `strings.xml`. This should be from your back-end directory and is set to `http://10.0.2.2:8000` by default. We do not set the redirect_uri to the localhost because the Android emulator runs in a VM, therefore localhost will be the emulator's own loopback address.
 
 ```xml
 <string name="app_server">[yourAppServer]</string>
