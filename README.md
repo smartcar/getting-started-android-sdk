@@ -9,6 +9,7 @@ Before we get started, create an application on Smartcar's Developer Dashboard t
 
 Then, we can set these constants in `strings.xml` -
 ```xml
+<string name="smartcar_auth_scheme">sc[yourClientId]</string>
 <string name="client_id">[yourClientId]</string>
 ```
 
