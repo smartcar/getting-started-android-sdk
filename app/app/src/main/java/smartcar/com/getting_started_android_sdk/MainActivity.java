@@ -23,10 +23,10 @@ import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Context appContext;
     private static String CLIENT_ID;
     private static String REDIRECT_URI;
     private static String[] SCOPE;
-    private Context appContext;
     private SmartcarAuth smartcarAuth;
 
     @Override
