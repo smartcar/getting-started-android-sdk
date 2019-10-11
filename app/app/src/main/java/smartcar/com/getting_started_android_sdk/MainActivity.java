@@ -3,18 +3,23 @@ package smartcar.com.getting_started_android_sdk;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
-import android.util.Log;
 
-import com.smartcar.sdk.*;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.smartcar.sdk.SmartcarAuth;
+import com.smartcar.sdk.SmartcarCallback;
+import com.smartcar.sdk.SmartcarResponse;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 
-import okhttp3.*;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         appContext = getApplicationContext();
         CLIENT_ID = getString(R.string.client_id);
-        REDIRECT_URI = "sc" + getString(R.string.client_id) + "://exchange";
+        REDIRECT_URI = getString(R.string.smartcar_auth_scheme) + "://" + getString(R.string.smartcar_auth_host);
         SCOPE = new String[]{"required:read_vehicle_info"};
 
         smartcarAuth = new SmartcarAuth(
@@ -60,7 +65,9 @@ public class MainActivity extends AppCompatActivity {
 
                         try {
                             client.newCall(exchangeRequest).execute();
-                        } catch (IOException e) {}
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
 
                         // send request to retrieve the vehicle info
                         Request infoRequest = new Request.Builder()
@@ -92,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button connectButton = (Button) findViewById(R.id.connect_button);
+        Button connectButton = findViewById(R.id.connect_button);
 
         smartcarAuth.addClickHandler(appContext, connectButton);
     }
