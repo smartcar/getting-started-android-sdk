@@ -5,7 +5,7 @@
  * @format
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
@@ -15,8 +15,10 @@ import {
   Text,
   useColorScheme,
   View,
+  Button,
   NativeModules,
 } from 'react-native';
+const {SmartcarConnectModule} = NativeModules;
 
 import {
   Colors,
@@ -58,15 +60,11 @@ function Section({children, title}: SectionProps): React.JSX.Element {
 
 const HelloWorldApp = () => {
     const [value, setValue] = useState('');
-    const {SmartcarConnectModule} = NativeModules;
       const onPress = () => {
         const val = SmartcarConnectModule.connectToSmartcar();
         setValue(val);
       };
 
-      return (
-
-      );
   return (
     <View style={styles.sectionContainer}>
       <Button

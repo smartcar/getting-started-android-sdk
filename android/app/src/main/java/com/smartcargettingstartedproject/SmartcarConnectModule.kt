@@ -9,11 +9,7 @@ import com.facebook.react.bridge.Callback
 import com.smartcar.sdk.SmartcarAuth
 
 class SmartcarConnectModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
-    private val REACT_CLASS = "SmartcarConnect"
-
-    override fun getName(): String {
-        return REACT_CLASS
-    }
+    override fun getName() = "SmartcarConnectModule"
 
     @ReactMethod
     fun connectToSmartcar() {
@@ -24,9 +20,8 @@ class SmartcarConnectModule(reactContext: ReactApplicationContext) : ReactContex
         )
         { smartcarResponse -> // Retrieve the authorization code
             Log.d("SmartcarAuth", "Authorization code: " + smartcarResponse.code)
-            return smartcarResponse.code.toString();
         }
 
-        smartcarAuth.launchAuthFlow(reactContext)
+        smartcarAuth.launchAuthFlow(currentActivity)
     }
 }
