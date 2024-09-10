@@ -15,6 +15,7 @@ import {
   Text,
   useColorScheme,
   View,
+  NativeModules,
 } from 'react-native';
 
 import {
@@ -56,14 +57,31 @@ function Section({children, title}: SectionProps): React.JSX.Element {
 }
 
 const HelloWorldApp = () => {
+    const [value, setValue] = useState('');
+    const {SmartcarConnectModule} = NativeModules;
+      const onPress = () => {
+        const val = SmartcarConnectModule.connectToSmartcar();
+        setValue(val);
+      };
+
+      return (
+
+      );
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-      <Text>Hello, world!</Text>
+    <View style={styles.sectionContainer}>
+      <Button
+        title="Click to invoke your native module!"
+        color="#841584"
+        onPress={onPress}
+      />
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Text>{value}</Text>
+        </View>
     </View>
   );
 };
