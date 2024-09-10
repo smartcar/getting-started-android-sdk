@@ -59,11 +59,18 @@ function Section({children, title}: SectionProps): React.JSX.Element {
 }
 
 const HelloWorldApp = () => {
-    const [value, setValue] = useState('');
-      const onPress = () => {
-        const val = SmartcarConnectModule.connectToSmartcar();
-        setValue(val);
-      };
+  const [value, setValue] = useState('');
+  const onPress = () => {
+    SmartcarConnectModule.connectToSmartcar(
+        "<client id>",
+        "testapp://exchange",
+        ["read_vehicle_info", "read_odometer"],
+        function(code) {
+            console.log("Authorization code:", code);
+            setValue(code);
+        }
+    );
+  };
 
   return (
     <View style={styles.sectionContainer}>
@@ -72,14 +79,13 @@ const HelloWorldApp = () => {
         color="#841584"
         onPress={onPress}
       />
-        <View
-          style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-          <Text>{value}</Text>
-        </View>
+      <View
+        style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Text style={{ color: 'white' }}>{value}</Text>
+      </View>
     </View>
   );
 };
