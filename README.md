@@ -1,55 +1,79 @@
-This is the starter kit for Android SDK.
+This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-This kit contains a simple Android application that displays car information using Smartcar's Android SDK.
+# Getting Started
 
-## Instructions
-Before we get started, create an application on [Smartcar's Developer Dashboard](https://dashboard.smartcar.com) to get your API keys.
+>**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
-**Note:** On the dashboard, add a redirect uri on the credentials tab with the following format: `sc` + `yourClientId` + `://exchange`. For example: `sc42d24fb4-74e7-4e3b-b82a-913fa9345d1a://exchange`.
+## Step 1: Start the Metro Server
 
-Then, we can set these constants in `strings.xml` -
-```xml
-<string name="smartcar_auth_scheme">sc[yourClientId]</string>
-<string name="client_id">[yourClientId]</string>
-```
+First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
-Next, we need to setup the custom URL scheme in the `AndroidManifest.xml` -
+To start Metro, run the following command from the _root_ of your React Native project:
 
-```xml
-<activity android:name="com.smartcar.sdk.SmartcarCodeReceiver">
-  <intent-filter>
-    <action android:name="android.intent.action.VIEW" />
-    <category android:name="android.intent.category.DEFAULT" />
-    <category android:name="android.intent.category.BROWSABLE" />
-    <data
-      android:host="@string/smartcar_auth_host"
-      android:scheme="@string/smartcar_auth_scheme" />
-  </intent-filter>
-</activity>
-```
-
-Before setting up the client code, make sure to set up the server code. You can use any of our following back-end SDKs -
-* [Node SDK](https://github.com/smartcar/getting-started-node-sdk)
-* [Python SDK](https://github.com/smartcar/getting-started-python-sdk)
-* [Java SDK](https://github.com/smartcar/getting-started-java-sdk)
-
-Follow the setup instructions in the back-end README except for the `redirect_uri`. Make sure the `redirect_uri` environment variable in the back-end directory is the same as the one we have set above.
-
-Now that the server is ready, you can set up the client (the React application).
-
-Set the server `uri` in `strings.xml`. This should be from your back-end directory and is set to `http://10.0.2.2:8000` by default. We do not set the redirect_uri to the localhost because the Android emulator runs in a VM, therefore localhost will be the emulator's own loopback address.
-
-```xml
-<string name="app_server">[yourAppServer]</string>
-```
-Make sure you have cloned this repo -
 ```bash
-$ git clone git@github.com:smartcar/getting-started-android-sdk.git
-$ cd getting-started-android-sdk/app
-```
-To install the required dependencies -
-```bash
-./gradlew build
+# using npm
+npm start
+
+# OR using Yarn
+yarn start
 ```
 
-Run the Android simulator within Android Studio! In our current set up, we are using Smartcar's [test mode](https://smartcar.com/docs/guides/testing/), so you can log in with any username and password and you will see information of a simulated vehicle.
+## Step 2: Start your Application
+
+Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+
+### For Android
+
+```bash
+# using npm
+npm run android
+
+# OR using Yarn
+yarn android
+```
+
+### For iOS
+
+```bash
+# using npm
+npm run ios
+
+# OR using Yarn
+yarn ios
+```
+
+If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+
+This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+
+## Step 3: Modifying your App
+
+Now that you have successfully run the app, let's modify it.
+
+1. Open `App.tsx` in your text editor of choice and edit some lines.
+2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+
+   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+
+## Congratulations! :tada:
+
+You've successfully run and modified your React Native App. :partying_face:
+
+### Now what?
+
+- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
+- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+
+# Troubleshooting
+
+If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+
+# Learn More
+
+To learn more about React Native, take a look at the following resources:
+
+- [React Native Website](https://reactnative.dev) - learn more about React Native.
+- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
+- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
+- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
+- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
